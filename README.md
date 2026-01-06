@@ -1,11 +1,32 @@
 ### Malware Boys 
 # 🐍 Honeypot: A Beginner-Friendly Cybersecurity Trap
 
-Welcome to my Honeypot project! This is a lightweight and educational honeypot designed to simulate vulnerable services, log attacker behavior, and help you learn how intrusions happen in the wild.
+A lightweight and educational honeypot designed to simulate vulnerable services, capture attacker behavior, and explore how intrusions occur in real-world environments. This project emphasizes **isolation, observability, and secure deployment.**
 
-## 🚀 What Is a Honeypot?
+---
 
-A **honeypot** is a decoy system designed to lure attackers, detect unauthorized access attempts, and gather information about threat actors — all while keeping your real systems safe.
+## 🔍 Project Overview
+
+A **honeypot** is a decoy system intended to attract malicious traffic so that attacker behaviour can be safely observed and analyzed without risking real production systems. 
+
+This honeypot emulates common network services (e.g. SSH, HTTP, FTP), logs interaction data, and run in an isolated Linux environment to ensure containment and safety.
+
+---
+
+## 👤 My Contributions (Important)
+
+This project was developed as a **group security project.**
+My primary contributions focus on **system isolation, networking, and containment.**
+
+
+### 🔧 My work includes
+- Designing **Docker-based service isolation** to safely run the honeypot on Linux.
+- Creating a **custom Docker bridge network** to segment honeypot traffic.
+- Implementing **firewall rules and IP-blocking logic** to contain and limit malicious activity.
+- Ensuring the honeypot could run continuously with minimal risk to the host system.
+
+### 📌 Note:
+My contributions live on the **isolation-docker branch.** Please review that branch to see the Docker networking, firewall configuration, and isolation logic.
 
 ---
 
@@ -33,36 +54,7 @@ A **honeypot** is a decoy system designed to lure attackers, detect unauthorized
 
 ---
 
-## 🧠 Future Improvements
-
-- 🌍 Geolocate attacker IPs
-- 📁 Trap malicious file uploads
-- 🐚 Detect reverse shell attempts
-- 🔒 Encrypt and ship logs to S3 or remote servers
-- 🚫 Auto-block repeated intrusions by IP
-
----
-
-## ⚠️ Security Notice
-
-**⚠️ Never run a honeypot on a production or personal machine.**  
-Always isolate it in a **VM**, **container**, or behind strict **firewall rules**. Honeypots attract real attackers.
-
----
-
-## 🏁 Getting Started
-
-```bash
-# Clone this repo
-git clone https://github.com/Kia82/malware-boys-pentesting.git
-cd honeypot
-
-# Run the honeypot
-cd honeypot
-python3 honeypot.py
-```
-
-## 🗂️ Package Structure
+## 🗂️ Project Structure
 
 ```
 honeypot/
@@ -96,3 +88,37 @@ honeypot/
 └── run.py                     # Thin wrapper for CLI entry
 
 ```
+
+---
+
+## ⚠️ Security Notice
+
+**⚠️ Never run a honeypot on a production or personal machine.**  
+Always isolate it in a **VM**, **container**, or behind strict **firewall rules**. Honeypots attract real attackers.
+
+---
+
+## 🏁 Getting Started
+
+```bash
+# Clone this repo
+git clone https://github.com/shadmanh123/honeypot.git
+cd honeypot
+
+# Switch to branch with isolation work
+git checkout isolation-docker
+
+# Build and run
+docker build -t honeypot .
+docker run --rm honeypot
+```
+
+---
+
+## 🧠 Future Improvements
+
+- 🌍 Geolocate attacker IPs
+- 📁 Trap malicious file uploads
+- 🐚 Detect reverse shell attempts
+- 🔒 Encrypt and ship logs to S3 or remote servers
+- 🚫 Auto-block repeated intrusions by IP
